@@ -1,0 +1,10 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-ex-animal
+data:
+  animal: lion
+  bird: dove
+  car: creta
+...

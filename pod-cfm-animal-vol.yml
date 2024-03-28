@@ -1,0 +1,17 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-with-volume-as-cfm
+spec:
+  volumes:
+  -  name: vol1
+     configMap:
+       name: config-ex-animal
+  containers:
+  - name: apache
+    image: httpd
+    volumeMounts:
+    -  name: vol1
+       mountPath: /tmp/apache
+...

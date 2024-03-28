@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample-po1
+spec:
+  containers:
+  - image: nginx
+    name: httpd
+    envFrom:
+    - configMapRef:
+        name: configmap-example
+...

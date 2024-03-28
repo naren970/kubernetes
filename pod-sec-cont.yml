@@ -1,0 +1,20 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pod-with-sec-context
+spec:
+  securityContext:
+    runAsUser: 10000
+    runAsGroup: 20000
+    fsGroup: 30000
+  volumes:
+  - name: vol1
+    emptyDir: {}
+  containers:
+  - name: apache
+    image: httpd
+    volumeMounts:
+    - name: vol1
+      mountPath: /data/ed
+...
